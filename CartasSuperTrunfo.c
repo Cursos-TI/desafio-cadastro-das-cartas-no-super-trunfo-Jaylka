@@ -15,6 +15,8 @@ int main(){
     float area;
     float pib;
     int ponto_turistico;
+    float densidade_populacional;
+    float pib_per_capita;
 
     printf("Digite o Estado: \n");
     scanf(" %c", &estado);
@@ -46,7 +48,13 @@ int main(){
     printf("Nome da cidade: %s\n", nome_cidade);
     printf("População: %d Habitantes\n", populacao);
     printf("Área: %.2f km²\n", area);
+    //Nível Aventureiro- operadores
+    densidade_populacional = (float) populacao / area;
+    printf("Densidade Populacional: %.2f\n", densidade_populacional);
     printf("PIB: %.2f Bilhões de reais\n", pib);
+    
+    pib_per_capita =  pib / populacao;
+    printf("PIB per Capital: %f\n", pib_per_capita);
     printf("Número de Pontos Turísticos: %d\n", ponto_turistico);
 
     return 0;
