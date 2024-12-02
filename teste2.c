@@ -11,7 +11,7 @@ int main(){
     char estado;
     char codigo_carta[20];
     char nome_cidade[50];
-    float populacao;
+    int populacao;
     float area;
     float pib;
     int ponto_turistico;
@@ -49,12 +49,13 @@ int main(){
     printf("População: %d Habitantes\n", populacao);
     printf("Área: %.2f km²\n", area);
     //Nível Aventureiro- operadores
-    densidade_populacional =  populacao / area;
-    printf("Densidade Populacional: %.2f habitantes\n", densidade_populacional);
+    
+    densidade_populacional = (float) populacao / area;  //conversão explicita
+    printf("Densidade Populacional: %.2f pessoas/km²\n", densidade_populacional);
     printf("PIB: %.2f Bilhões de reais\n", pib);
     
-    pib_per_capita =  pib / populacao;
-    printf("PIB per Capita: %.2f reais\n", pib_per_capita);
+    pib_per_capita =  pib * 1000000000 / populacao; // convresão do PIB em Bilhões para reais antes do calcul
+    printf("PIB per Capita: %.0f reais\n", pib_per_capita); // %.0f: imprimir valor inteiro
     printf("Número de Pontos Turísticos: %d\n", ponto_turistico);
 
     return 0;
